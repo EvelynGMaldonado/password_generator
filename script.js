@@ -1,65 +1,86 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var upperCase = document.querySelector("uppercase");
-var lowerCase = document.querySelector("lowercase");
-var numbers = document.querySelector("numbers");
-var symbols = document.querySelector("symbols");
+/*
+var lowerCaseBox = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseBox = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberBox = "0123456789"
 
 
-var RandFunc = {
-  lower: randLow,
-  upper: randUpper,
-  number: randNumb,
-  symbol: randSymb,
-} 
+*/
+
+var lengthEl = prompt("Enter the amount of characters you would like to have in your password (between 8 to 128 characters)");
+var upperCase = prompt("Do you want upper case letters in your password?: Y/N");
+var lowerCase = prompt("Do you want lower case letters in your password?: Y/N");
+var numbers = prompt("Do you want numbers in your password?: Y/N");
+var symbols = prompt("Do you want special characters in your password?: Y/N");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+function generatePassword() {
+    
+    if (lengthEl.value < 8 || lengthEl.value > 128) {
+        alert("length should be between 8-128 characters");
+        generatePassword();
+    }
 
-  passwordText.value = password;
-  document.body.appendChild(passwordText);
-  
+    function randLow() {
+        if (upperCase==="Y"); 
+        return String.fromCharCode(Math.floor(Math.random()*26)+97);
+    }
+    
+    function randUpper() {
+        if (lowerCase==="Y") 
+        return String.fromCharCode(Math.floor(Math.random()*26)+65);
+    }
+    
+    function randNumbr() {
+        if (numbers==="Y") 
+        return String.fromCharCode(Math.floor(Math.random()*10)+48);
+    }
 
+ 
+    function randSymb() {
+        var symb = '~!@#$%^&*()_-+=:?><;.,';
+        if (symbols==="Y")
+        return symb[Math.floor(Math.random()*symb*lenght)];
+    }
+
+    var randFunc = {lower: randLow, upper: randUpper, number: randNumbr, symbol: randSymb};
+
+    var finalPassword = "";
+
+    var typesCount = lower + upper + number + symbol;
+
+    var typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]
+    );
+
+    if (typesCount ===0) {
+    alert("Please select at least one character type");
+    generatePassword()
+    }
+
+    for(let i = 0; i<lenght; i += typesCount) {
+    typesArr.forEach(type => {
+    var funcName = Object.keys(type) [0];
+    generatedPassword += randFunc[funcName]();
+    
+    });
+    
+        //  //display the password to the page
+    
+        //return "Generated password will go here";//
+    
+    var finalPassword = generatedPassword.slice(0, lengthEl);
+    return finalPassword;
 }
+}
+
+
+function writePassword() {
+    var password = finalPassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+}
+
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
-  var length = lenght.value;
-  console.log(length);
-}
-
-
-
-
-
-
-
-function randLow() {
-  return String.fromCharCode(Math.floor(Math.random()*26)+97);
-}
-console.log(randLow());
-
-
-function randUpper() {
-  return String.fromCharCode(Math.floor(Math.random()*26)+65);
-}
-console.log(randUpper());
-
-
-function randNumb() {
-  return String.fromCharCode(Math.floor(Math.random()*10)+48);
-}
-console.log(randNumbr());
-
-
-function randSymb() {
-  var symb = '~!@#$%^&*()_-+=:?><;.,';
-  return symb(Math.floor(Math.random()*symb*lenght))
-}
-console.log(randSymb());
-
-
-
-
+generateBtn.addEventListener("click", generatePassword);
