@@ -1,18 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-/*
+
 var lowerCaseBox = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseBox = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberBox = "0123456789"
-
-
-*/
+var spacialCharac = '~!@#$%^&*()_-+=:?><;.,|';
 
 var lengthEl = prompt("How many characters would you like in your password (enter a number between 8 to 128 characters)? ");
 var upperCase = confirm("Do you want upper case letters in your password?: ");
 var lowerCase = confirm("Do you want lower case letters in your password?: ");
 var numbers = confirm("Do you want numbers in your password?: ");
 var symbols = confirm("Do you want special characters in your password?: ");
+
+
 
 // Write password to the #password input
 function generatePassword() {
@@ -39,7 +39,7 @@ function generatePassword() {
 
  
     function randSymb() {
-        var symb = '~!@#$%^&*()_-+=:?><;.,';
+        // var symb = '~!@#$%^&*()_-+=:?><;.,|';
         if (symbols==="Y")
         return symb[Math.floor(Math.random()*symb*lenght)];
     }
