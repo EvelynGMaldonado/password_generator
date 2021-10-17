@@ -8,11 +8,11 @@ var numberBox = "0123456789"
 
 */
 
-var lengthEl = prompt("Enter the amount of characters you would like to have in your password (between 8 to 128 characters)");
-var upperCase = prompt("Do you want upper case letters in your password?: Y/N");
-var lowerCase = prompt("Do you want lower case letters in your password?: Y/N");
-var numbers = prompt("Do you want numbers in your password?: Y/N");
-var symbols = prompt("Do you want special characters in your password?: Y/N");
+var lengthEl = prompt("How many characters would you like in your password (enter a number between 8 to 128 characters)? ");
+var upperCase = confirm("Do you want upper case letters in your password?: ");
+var lowerCase = confirm("Do you want lower case letters in your password?: ");
+var numbers = confirm("Do you want numbers in your password?: ");
+var symbols = confirm("Do you want special characters in your password?: ");
 
 // Write password to the #password input
 function generatePassword() {
