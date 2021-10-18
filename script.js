@@ -82,7 +82,7 @@ function generatePassword(){
     getNumbers();
     getSpecialCharac();
 
-    var finalPassword = "";
+    var password = "";
     var characters;
 
     if (getUpperCase && getLowerCase && getNumbers && getSpecialCharac) {
@@ -120,138 +120,26 @@ function generatePassword(){
         return generatePassword();
     }
     for (var i = 0; i < lengthEl; i++) {
-        finalPassword += characters.charAt(Math.floor(Math.random() * characters.lenght));
-        console.log("the final password is: ", finalPassword);
+        password += characters.charAt(Math.floor(Math.random() * characters.lenght));
+        console.log("the password is: ", password);
 
     }
     return finalPassword;
 }
 
-
-
-
-
-var lowerCaseBox = "abcdefghijklmnopqrstuvwxyz";
-var upperCaseBox = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numberBox = "0123456789"
-var specialCharacBox = '~!@#$%^&*()_-+=:?><;.,|';
-
-
-
-    var randFunc = {lower: randLow, upper: randUpper, number: randNumbr, symbol: randSymb};
-
+//Function to write the password to the password input 
+function writePassword() {
     var finalPassword = "";
+    finalPassword = generatePassword();
+    var displayPassword = document.querySelector("#password");
+    displayPassword.value = finalPassword;
 
-    var typesCount = lower + upper + number + symbol;
+}
 
-    var typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]
-    );
-
-    if (typesCount ===0) {
-    alert("Please select at least one character type");
-    generatePassword()
-    }
-
-    for(let i = 0; i<lenght; i += typesCount) {
-    typesArr.forEach(type => {
-    var funcName = Object.keys(type) [0];
-    generatedPassword += randFunc[funcName]();
-    
-    });
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 
-
-function createPassword(length) {
-    var alpha = "abcdefghijklmnopqrstuvwxyz";
-    var caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var numeric = "0123456789";
-    var special = "!$^&*-=+_?";
-
-    var options = [alpha, caps, numeric, special];
-
-    var password = "";
-    var passwordArray = Array(length);
-
-    for (i = 0; i < length; i++) {
-        var currentOption = options[Math.floor(Math.random() * options.length)];
-        var randomChar = currentOption.charAt(Math.floor(Math.random() * currentOption.length));
-        password += randomChar;
-        passwordArray.push(randomChar);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Write password to the #password input
-// function generatePassword() {
-    
-//     if (lengthEl.value < 8 || lengthEl.value > 128) {
-//         alert("length should be between 8-128 characters");
-//         generatePassword();
-//     }
-
-//     function randLow() {
-//         if (upperCase==="Y"); 
-//         return String.fromCharCode(Math.floor(Math.random()*26)+97);
-//     }
-    
-//     function randUpper() {
-//         if (lowerCase==="Y") 
-//         return String.fromCharCode(Math.floor(Math.random()*26)+65);
-//     }
-    
-//     function randNumbr() {
-//         if (numbers==="Y") 
-//         return String.fromCharCode(Math.floor(Math.random()*10)+48);
-//     }
-
- 
-//     function randSymb() {
-//         // var symb = '~!@#$%^&*()_-+=:?><;.,|';
-//         if (symbols==="Y")
-//         return symb[Math.floor(Math.random()*symb*lenght)];
-//     }
 
 //     var randFunc = {lower: randLow, upper: randUpper, number: randNumbr, symbol: randSymb};
 
@@ -273,23 +161,138 @@ function createPassword(length) {
 //     generatedPassword += randFunc[funcName]();
     
 //     });
+
+
+
+// function createPassword(length) {
+//     var alpha = "abcdefghijklmnopqrstuvwxyz";
+//     var caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     var numeric = "0123456789";
+//     var special = "!$^&*-=+_?";
+
+//     var options = [alpha, caps, numeric, special];
+
+//     var password = "";
+//     var passwordArray = Array(length);
+
+//     for (i = 0; i < length; i++) {
+//         var currentOption = options[Math.floor(Math.random() * options.length)];
+//         var randomChar = currentOption.charAt(Math.floor(Math.random() * currentOption.length));
+//         password += randomChar;
+//         passwordArray.push(randomChar);
+//     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // // Write password to the #password input
+// // function generatePassword() {
     
-//         //  //display the password to the page
+// //     if (lengthEl.value < 8 || lengthEl.value > 128) {
+// //         alert("length should be between 8-128 characters");
+// //         generatePassword();
+// //     }
+
+// //     function randLow() {
+// //         if (upperCase==="Y"); 
+// //         return String.fromCharCode(Math.floor(Math.random()*26)+97);
+// //     }
     
-//         //return "Generated password will go here";//
+// //     function randUpper() {
+// //         if (lowerCase==="Y") 
+// //         return String.fromCharCode(Math.floor(Math.random()*26)+65);
+// //     }
     
-//     var finalPassword = generatedPassword.slice(0, lengthEl);
-//     return finalPassword;
-// }
-// }
+// //     function randNumbr() {
+// //         if (numbers==="Y") 
+// //         return String.fromCharCode(Math.floor(Math.random()*10)+48);
+// //     }
+
+ 
+// //     function randSymb() {
+// //         // var symb = '~!@#$%^&*()_-+=:?><;.,|';
+// //         if (symbols==="Y")
+// //         return symb[Math.floor(Math.random()*symb*lenght)];
+// //     }
+
+// //     var randFunc = {lower: randLow, upper: randUpper, number: randNumbr, symbol: randSymb};
+
+// //     var finalPassword = "";
+
+// //     var typesCount = lower + upper + number + symbol;
+
+// //     var typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]
+// //     );
+
+// //     if (typesCount ===0) {
+// //     alert("Please select at least one character type");
+// //     generatePassword()
+// //     }
+
+// //     for(let i = 0; i<lenght; i += typesCount) {
+// //     typesArr.forEach(type => {
+// //     var funcName = Object.keys(type) [0];
+// //     generatedPassword += randFunc[funcName]();
+    
+// //     });
+    
+// //         //  //display the password to the page
+    
+// //         //return "Generated password will go here";//
+    
+// //     var finalPassword = generatedPassword.slice(0, lengthEl);
+// //     return finalPassword;
+// // }
+// // }
 
 
-// function writePassword() {
-//     var password = finalPassword();
-//     var passwordText = document.querySelector("#password");
-//     passwordText.value = password;
-// }
+// // function writePassword() {
+// //     var password = finalPassword();
+// //     var passwordText = document.querySelector("#password");
+// //     passwordText.value = password;
+// // }
 
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", generatePassword);
+// // // Add event listener to generate button
+// // generateBtn.addEventListener("click", generatePassword);
