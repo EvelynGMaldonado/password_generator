@@ -119,10 +119,12 @@ function generatePassword(){
         alert("Your must select at least one character type and select th number of characters between 8-128");  
         return generatePassword();
     }
+    for (var i = 0; i < lengthEl; i++) {
+        finalPassword += characters.charAt(Math.floor(Math.random() * characters.lenght));
+        console.log("the final password is: ", finalPassword);
 
-
-
-
+    }
+    return finalPassword;
 }
 
 
