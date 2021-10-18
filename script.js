@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 var lowerCaseBox = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseBox = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberBox = "0123456789"
-var spacialCharacBox = '~!@#$%^&*()_-+=:?><;.,|';
+var specialCharacBox = '~!@#$%^&*()_-+=:?><;.,|';
 
 var lengthEl = prompt("How many characters would you like in your password (enter a number between 8 to 128 characters)? ");
 var upperCase = confirm("Do you want upper case letters in your password?: ");
@@ -64,7 +64,7 @@ function getNumbers() {
 }
 
 //Function to determine the use of special characters in the password
-function getNumbers() {
+function getSpecialCharac() {
     specialCharac;
     if (specialCharac == true) {
         alert("Your password will include special characters");        
@@ -74,18 +74,108 @@ function getNumbers() {
     return specialCharac;
 }
 
+//Generate password function
+function generatePassword(){
+    getPasswordLength();
+    getUpperCase();
+    getLowerCase();
+    getNumbers();
+    getSpecialCharac();
+
+    var finalPassword = "";
+    var characters;
+
+    if (getUpperCase && getLowerCase && getNumbers && getSpecialCharac) {
+        characters += upperCaseBox + lowerCaseBox + numberBox + specialCharacBox;
+    } else if (getUpperCase && getLowerCase && getNumbers) {
+        characters += upperCaseBox + lowerCaseBox + numberBox;
+    } else if (getUpperCase && getLowerCase && getSpecialCharac) {
+        characters += upperCaseBox + lowerCaseBox + specialCharacBox;
+    } else if (getUpperCase && getNumbers && getSpecialCharac) {
+        characters += upperCaseBox + numberBox + specialCharacBox;
+    } else if (getLowerCase && getNumbers && getSpecialCharac) {
+        characters += lowerCaseBox + numberBox + specialCharacBox;
+    } else if (getUpperCase && getLowerCase) {
+        characters += upperCaseBox + lowerCaseBox;
+    } else if (getUpperCase && getNumbers) {
+        characters += upperCaseBox + numberBox;
+    } else if (getUpperCase && getSpecialCharac) {
+        characters += upperCaseBox + specialCharacBox;
+    } else if (getLowerCase && getNumbers) {
+        characters += lowerCaseBox + numberBox;
+    } else if (getLowerCase && getSpecialCharac) {
+        characters += lowerCaseBox + specialCharacBox;
+    } else if (getNumbers && getSpecialCharac) {
+        characters += numberBox + specialCharacBox;
+    } else if (getUpperCase) {
+        characters += upperCaseBox;
+    } else if (getLowerCase) {
+        characters += lowerCaseBox;
+    } else if (getNumbers) {
+        characters += numberBox;
+    } else if (getSpecialCharac) {
+        characters += specialCharacBox;
+    } else {
+        alert("Your must select at least one character type and select th number of characters between 8-128");  
+        return generatePassword();
+    }
+
+
+
+
+}
 
 
 
 
 
+var lowerCaseBox = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseBox = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberBox = "0123456789"
+var specialCharacBox = '~!@#$%^&*()_-+=:?><;.,|';
 
 
 
+    var randFunc = {lower: randLow, upper: randUpper, number: randNumbr, symbol: randSymb};
+
+    var finalPassword = "";
+
+    var typesCount = lower + upper + number + symbol;
+
+    var typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]
+    );
+
+    if (typesCount ===0) {
+    alert("Please select at least one character type");
+    generatePassword()
+    }
+
+    for(let i = 0; i<lenght; i += typesCount) {
+    typesArr.forEach(type => {
+    var funcName = Object.keys(type) [0];
+    generatedPassword += randFunc[funcName]();
+    
+    });
 
 
 
+function createPassword(length) {
+    var alpha = "abcdefghijklmnopqrstuvwxyz";
+    var caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numeric = "0123456789";
+    var special = "!$^&*-=+_?";
 
+    var options = [alpha, caps, numeric, special];
+
+    var password = "";
+    var passwordArray = Array(length);
+
+    for (i = 0; i < length; i++) {
+        var currentOption = options[Math.floor(Math.random() * options.length)];
+        var randomChar = currentOption.charAt(Math.floor(Math.random() * currentOption.length));
+        password += randomChar;
+        passwordArray.push(randomChar);
+    }
 
 
 
