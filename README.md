@@ -1,6 +1,4 @@
-# 03 JavaScript: Password Generator
-
-# Proyect Name is: my project
+#  Password Generator
 
 ## Table of contents
 1. [Description](#description)
@@ -13,7 +11,7 @@
 A password generator is a software tool that creates random or customized passwords for users. It helps users create stronger passwords that provide greater security for a given type of access. This specific program produces complex and strong passwords with combinations of numbers, uppercase and lowercase letters, and special characters such as braces, asterisks, slashes, etc.
 
 ## Installation 
-This application requires the inquirer npm package (command line user interfaces) and the fs module (let us interact with the file system).
+This javascript application requires the inquirer npm package (command line user interfaces) and the fs module (let us interact with the file system).
 
 ## Usage 
 The user will be presented with a password generator webpage, once the generate password button is clicked, then a series of prompts for the password criteria will be presented. After all the questions are answered, then the inputs are validated, the password is generated and is displayed to the page.
