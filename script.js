@@ -15,10 +15,6 @@ var lowerCase;
 var numbers;
 var specialCharac;
 
-// Write password to the #password input
-//display the password to the page
-//return "Generated password will go here"
-
 //FUNCTIONS TO DETERMINE PASSWORD CRITEIRA
 //Function to determine password length
 function getPasswordLength() {
