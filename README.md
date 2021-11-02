@@ -30,7 +30,7 @@ If you have any questions, please contact me to the information listed below.
 * The following images show the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](./assets/03-javascript-homework-demo.png)
-![The Password has been generated".](./assets/passwordgenerated)
+![The Password has been generated".](./assets/passwordgenerated.jpeg)
 
 * Link to the GitHub Repository:
 [Password Generator](https://github.com/EvelynGMaldonado/password_generator)
