@@ -94,6 +94,7 @@ function getSpecialCharac() {
 
 //Function to write the password to the password input 
 function writePassword() {
+    password = "";
     getPasswordLength();
     getUpperCase();
     getLowerCase();
