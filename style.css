@@ -1,4 +1,17 @@
-*,
+body {
+  background-color: black;
+}
+.photo-background {
+  background-image: url("./assets/secbkground.jpg");
+  background-size: cover;
+  background-position: relative;
+  display: inline-block;
+}
+#current {
+  background-color: rgb(16, 7, 110);
+}
+
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -134,4 +147,4 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
-}
+} */
