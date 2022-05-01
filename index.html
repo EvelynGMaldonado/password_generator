@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" id="mynav">
       <li class="nav-item" style="background-color:rgb(16, 7, 110); border-color: white;">
         <a class="nav-link" style="color: white;" href="#">Password Generator</a>
       </li>
@@ -29,14 +29,10 @@
         <a class="nav-link" target="_blank" href="https://evelyngmaldonado.github.io/Portfolio/">Portfolio</a>
       </li>
     </ul>
-    <div class="photo-background" style="height: 100%;">
-      <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+    <div class="wrapper mt-5">
+      <div class="card mt-5">
+        <div class="">
+          <h1 class="card-title ml-3 mr-3 mt-3 mb-0 text-center" style="color: navy;">Password Generator</h1>
         </div>
         <div class="card-body">
           <textarea
@@ -46,15 +42,10 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
-        <div class="card-footer">
+        <div class="footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
-    </div>
-      <img src="./assets/secbkground.jpg" style="height: 100%; z-index: 1;">
-    </div>
-
-    
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

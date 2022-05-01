@@ -1,17 +1,6 @@
-body {
-  background-color: black;
-}
-.photo-background {
-  background-image: url("./assets/secbkground.jpg");
-  background-size: cover;
-  background-position: relative;
-  display: inline-block;
-}
-#current {
-  background-color: rgb(16, 7, 110);
-}
 
-/* *,
+
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -27,7 +16,10 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  /* background-color: #f9fbfd; */
+  background-image: url("./assets/secbkgroundd.jpg");
+  background-size: cover;
+  background-position: relative;
 }
 
 .wrapper {
@@ -43,8 +35,17 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* #footer {
+  background-color: rgba(0, 0, 139, 0.436);
+  color: white;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;
+} */
+
 .card {
-  background-color: hsl(0, 0%, 100%);
+  /* background-color: hsl(0, 0%, 100%); */
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -59,7 +60,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #ffffff;
   height: 2px;
 }
 
@@ -67,19 +68,19 @@ header {
   min-height: 100px;
 }
 
-.card-footer {
+.footer {
   text-align: center;
 }
 
-.card-footer::before {
+.footer::before {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  /* background: #e7e9eb; */
   height: 2px;
 }
 
-.card-footer::after {
+.footer::after {
   content: " ";
   display: block;
   clear: both;
@@ -87,7 +88,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: navy;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -103,11 +104,18 @@ header {
 
 button[disabled] {
   cursor: default;
-  background: #c0c7cf;
+  background: #ffffff;
 }
 
 .float-right {
   float: right;
+}
+#mynav {
+  background-color: linear-gradient(to black, navy, rgb(9, 171, 193));
+  font-weight: bolder;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border: none;
 }
 
 #password {
@@ -147,4 +155,4 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
-} */
+} 
